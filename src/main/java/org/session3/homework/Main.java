@@ -1,4 +1,4 @@
-package session_3.homework;
+package org.session3.homework;
 
 public class Main {
 

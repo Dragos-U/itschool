@@ -1,4 +1,4 @@
-package session_4.practice;
+package org.session4.onlinepractice;
 import java.util.logging.Logger;
 
 public class PrintWithLogger {

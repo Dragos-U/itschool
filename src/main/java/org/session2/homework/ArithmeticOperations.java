@@ -1,4 +1,4 @@
-package session_2.homework;
+package org.session2.homework;
 
 import java.util.Scanner;
 

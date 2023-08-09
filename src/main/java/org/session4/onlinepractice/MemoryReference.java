@@ -1,4 +1,4 @@
-package session_4.practice;
+package org.session4.onlinepractice;
 
 public class MemoryReference {
 
