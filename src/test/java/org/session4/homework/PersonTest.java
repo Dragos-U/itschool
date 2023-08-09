@@ -11,13 +11,13 @@ class PersonTest {
     @DisplayName("This person is an adult")
     void testDisplayIfThePersonIsAdult(){
         Person person = new Person(18);
-        assertEquals("I am adult.", person.displayIfThePersonIsAdult());
+        assertEquals("I am adult.", person.adulthoodOfPerson());
     }
 
     @Test
     @DisplayName("This person is not an adult")
-    void testDisplayIfThePersonIsNotAdult(){
+    void testPrintIfThePersonIsNotAdult(){
         Person person = new Person(17);
-        assertEquals("I am not adult.", person.displayIfThePersonIsAdult());
+        assertEquals("I am not adult.", person.adulthoodOfPerson());
     }
 }
