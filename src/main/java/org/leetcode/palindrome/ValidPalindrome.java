@@ -1,4 +1,4 @@
-package org.leetcode;
+package org.leetcode.palindrome;
 
 public class ValidPalindrome {
 
