@@ -2,11 +2,12 @@ package org.session4.homework;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class ArrayLists {
 
-    public static void playWithArrayLists(){
-        ArrayList<String> listOne = new ArrayList<>();
+    public static void main(String[] args) {
+        List<String> listOne = new ArrayList<>();
         listOne.add("a");
         listOne.add("b");
         listOne.add("c");

@@ -16,7 +16,7 @@ class PersonTest {
 
     @Test
     @DisplayName("This person is not an adult")
-    void testDisplayIfThePersonIsNotAdult(){
+    void testPrintIfThePersonIsNotAdult(){
         Person person = new Person(17);
         assertEquals("I am not adult.", person.adulthoodOfPerson());
     }

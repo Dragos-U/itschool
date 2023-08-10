@@ -1,11 +1,8 @@
 package org.session4.homework;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class Main {
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
         Person person = new Person(23);
         String adulthood = person.adulthoodOfPerson();
         System.out.println(adulthood);
@@ -16,7 +13,7 @@ public class Main {
 
         System.out.println(MathOperations.calculateFactorial(4));
 
-        System.out.println(Triangle.triangleType(3,3,3));
+        System.out.println(Triangle.triangleType(3, 3, 3));
     }
 }
 
