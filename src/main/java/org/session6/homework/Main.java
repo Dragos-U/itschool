@@ -1,15 +1,10 @@
 package org.session6.homework;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-
 public class Main {
 
     public static void main(String[] args) {
 
-        List<String> listOfStrings = new ArrayList<>(Arrays.asList("This ", "shall ", " be ", "a test"));
+        /*List<String> listOfStrings = new ArrayList<>(Arrays.asList("This ", "shall ", " be ", "a test"));
 
         String concatenatedString = StringUtilities.concatenateListOfStrings(listOfStrings);
         System.out.println("The concatenated string from the list: " + listOfStrings + " is :\n" + concatenatedString);
@@ -49,5 +44,27 @@ public class Main {
         System.out.println("\n The morse code for: [ "+originalString + " ] is :");
         System.out.println(translatedString);
 
+        String encodeThisString = "AAAbbbc122 ";
+        String encodedString = StringUtilities.encodeStringWithRunLengthEncoder(encodeThisString);
+        System.out.println("\n"+ encodeThisString + " -> "+ encodedString);
+
+        String decodedString = StringUtilities.decodeStringEncodedWithRLE(encodedString);
+        System.out.println(decodedString);*/
+
+        String checkingParantheses = "() [";
+        System.out.println(StringUtilities.balancedParanthesisChecker(checkingParantheses));
+
+        String interleaveOne = "ABCD";
+        String interleaveTwo = "efgh";
+        String interleavedString = StringUtilities.interleaveTwoStrings(interleaveOne, interleaveTwo);
+        System.out.println(interleavedString);
+
+        String toggleThis = "This Is An Upper String.";
+        String toggledString = StringUtilities.toggleCaseUpperToLower(toggleThis);
+        System.out.println(toggledString);
+
+        String cammelCase = "ThisIsACamelCaseString";
+        String snakeCase = StringUtilities.camelCaseToSnakeCaseConverter(cammelCase);
+        System.out.println("\n"+cammelCase + "->"+snakeCase);
     }
 }
