@@ -201,6 +201,6 @@ public class StringUtilities {
     }
 
     public static String encodeWithCaesarCypher(String input){
-
+        return null;
     }
 }
