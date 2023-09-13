@@ -1,6 +1,4 @@
-package org.session13.homework.librarymanagementsystem.profiles;
-
-import org.session13.homework.librarymanagementsystem.librarymanagement.Book;
+package org.session13.homework.librarymanagementsystem.srcdomain;
 
 import java.time.LocalDate;
 import java.util.HashMap;
@@ -23,6 +21,7 @@ public class Member {
         private Map<Book, LocalDate> borrowedBooks;
 
         public Builder(String name) {
+            if(name == null) throw new IllegalStateException("The name shall not be null.");
             this.name = name;
         }
 

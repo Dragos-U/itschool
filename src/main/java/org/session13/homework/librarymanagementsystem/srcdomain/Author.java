@@ -1,6 +1,4 @@
-package org.session13.homework.librarymanagementsystem.profiles;
-
-import org.session13.homework.librarymanagementsystem.librarymanagement.Book;
+package org.session13.homework.librarymanagementsystem.srcdomain;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

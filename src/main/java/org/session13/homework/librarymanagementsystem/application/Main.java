@@ -1,9 +1,8 @@
-package org.session13.homework.librarymanagementsystem;
+package org.session13.homework.librarymanagementsystem.application;
 
-import org.session13.homework.librarymanagementsystem.librarymanagement.Book;
-import org.session13.homework.librarymanagementsystem.librarymanagement.Library;
-import org.session13.homework.librarymanagementsystem.profiles.Author;
-import org.session13.homework.librarymanagementsystem.profiles.Member;
+import org.session13.homework.librarymanagementsystem.srcdomain.Book;
+import org.session13.homework.librarymanagementsystem.srcdomain.Author;
+import org.session13.homework.librarymanagementsystem.srcdomain.Member;
 import org.session13.homework.librarymanagementsystem.services.LibraryServices;
 import org.session13.homework.librarymanagementsystem.services.MemberServices;
 
@@ -43,6 +42,7 @@ public class Main {
         charlesDickens.addBook(book1cd);
 
         Library countyLib = Library.createInstance("County Library");
+        LibraryServices libraryServices = new LibraryServices(countyLib);
         countyLib.addBooksToLibrary(book1jv, 20);
         countyLib.addBooksToLibrary(book2jv, 10);
         countyLib.addBooksToLibrary(book1cd, 5);
@@ -59,6 +59,8 @@ public class Main {
                 .address("Iasi")
                 .build();
 
+        MemberServices memberServices = new MemberServices(countyLib);
+
         countyLib.addMember(member1);
         countyLib.addMember(member2);
 
@@ -73,17 +75,17 @@ public class Main {
 
         String searchName = "Alice";
         System.out.println("\nSearch members with name: " + searchName);
-        List<Member> existingMembers = LibraryServices.findMembersByName(searchName, countyLib);
+        List<Member> existingMembers = libraryServices.findMembersByName(searchName);
         existingMembers.forEach(System.out::println);
 
         int searchID = 2;
         System.out.println("\nSearch member with ID number: " + searchID);
-        System.out.println(LibraryServices.findMemberByID(searchID, countyLib));
+        System.out.println(libraryServices.findMemberByID(searchID));
 
         System.out.println("--------------------------------");
         System.out.println("The available books in the library: \n");
         countyLib.displayAvailableBooks();
-        MemberServices.borrowBook(countyLib,member1, book1jv, 14);
+        memberServices.borrowBook(member1, book1jv, 14);
 
         System.out.println("--------------------------------");
         System.out.println("The available books in the library: \n");
@@ -91,7 +93,7 @@ public class Main {
         member1.displayBorrowedBooks();
 
         System.out.println("--------------------------------");
-        MemberServices.returnBook(countyLib,member1,book1jv);
+        memberServices.returnBook(member1,book1jv);
         System.out.println("The available books in the library: \n");
         countyLib.displayAvailableBooks();
         member1.displayBorrowedBooks();

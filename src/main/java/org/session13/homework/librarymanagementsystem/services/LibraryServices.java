@@ -1,18 +1,20 @@
 package org.session13.homework.librarymanagementsystem.services;
 
-import org.session13.homework.librarymanagementsystem.librarymanagement.Library;
-import org.session13.homework.librarymanagementsystem.profiles.Member;
+import org.session13.homework.librarymanagementsystem.application.Library;
+import org.session13.homework.librarymanagementsystem.srcdomain.Member;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class LibraryServices {
 
-    private LibraryServices() {
-        throw new IllegalStateException("This class should not be instantiated.");
+    private final Library library;
+
+    public LibraryServices(Library library) {
+        this.library = library;
     }
 
-    public static List<Member> findMembersByName(String searchName, Library library) {
+    public List<Member> findMembersByName(String searchName) {
         List<Member> foundMembers = new ArrayList<>();
         for (Member member : library.getMembers()) {
             if (member.getName().equals(searchName)) {
@@ -23,7 +25,7 @@ public class LibraryServices {
         return foundMembers;
     }
 
-    public static Member findMemberByID(int ID, Library library) {
+    public Member findMemberByID(int ID) {
         for (Member member : library.getMembers()) {
             if (member.getID() == ID) {
                 return member;

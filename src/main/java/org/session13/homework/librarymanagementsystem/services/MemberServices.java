@@ -1,44 +1,46 @@
 package org.session13.homework.librarymanagementsystem.services;
 
-import org.session13.homework.librarymanagementsystem.librarymanagement.Book;
-import org.session13.homework.librarymanagementsystem.librarymanagement.Library;
-import org.session13.homework.librarymanagementsystem.profiles.Member;
+import org.session13.homework.librarymanagementsystem.srcdomain.Book;
+import org.session13.homework.librarymanagementsystem.application.Library;
+import org.session13.homework.librarymanagementsystem.srcdomain.Member;
 
 import java.time.LocalDate;
 import java.util.Map;
 
 public class MemberServices {
 
-    private MemberServices() {
-        throw new IllegalStateException("This class should not be instantiated.");
+    private final Library library;
+
+    public MemberServices(Library library) {
+        this.library = library;
     }
 
-    public static void borrowBook(Library library, Member member, Book book, int numberOfDays) {
+    public void borrowBook(Member member, Book book, int numberOfDays) {
         if (member == null || book == null) return;
         LocalDate dueDate = LocalDate.now().plusDays(numberOfDays);
         Map<Book, LocalDate> borrowedBooks = member.getBorrowedBooks();
         member.setBorrowedBooks(borrowedBooks);
         System.out.println("> " + member.getName() + " has successfully borrowed '" + book.getTitle() + "'.");
-        updateNumberOfBooksWhenBorrowed(library, book);
+        updateNumberOfBooksWhenBorrowed(book);
         borrowedBooks.put(book, dueDate);
     }
 
-    public static void updateNumberOfBooksWhenBorrowed(Library library, Book book) {
+    public void updateNumberOfBooksWhenBorrowed(Book book) {
         int currentCopies = library.getAvailableBooks().get(book);
         int updatedCopies = Math.max(0, currentCopies - 1);
         library.getAvailableBooks().put(book, updatedCopies);
     }
 
-    public static void updateNumberOfBooksWhenReturned(Library library, Book book) {
+    public void updateNumberOfBooksWhenReturned(Book book) {
         int currentCopies = library.getAvailableBooks().get(book);
         int updatedCopies = Math.max(0, currentCopies + 1);
         library.getAvailableBooks().put(book, updatedCopies);
     }
 
-    public static void returnBook(Library library, Member member, Book book) {
+    public void returnBook(Member member, Book book) {
         if (member == null || book == null) return;
         Map<Book, LocalDate> borrowedBooks = member.getBorrowedBooks();
         borrowedBooks.remove(book);
-        updateNumberOfBooksWhenReturned(library, book);
+        updateNumberOfBooksWhenReturned(book);
     }
 }

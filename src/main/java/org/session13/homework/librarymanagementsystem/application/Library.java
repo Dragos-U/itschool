@@ -1,6 +1,7 @@
-package org.session13.homework.librarymanagementsystem.librarymanagement;
+package org.session13.homework.librarymanagementsystem.application;
 
-import org.session13.homework.librarymanagementsystem.profiles.Member;
+import org.session13.homework.librarymanagementsystem.srcdomain.Book;
+import org.session13.homework.librarymanagementsystem.srcdomain.Member;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,6 +1,4 @@
-package org.session13.homework.librarymanagementsystem.librarymanagement;
-
-import org.session13.homework.librarymanagementsystem.profiles.Author;
+package org.session13.homework.librarymanagementsystem.srcdomain;
 
 public class Book {
 
@@ -19,6 +17,7 @@ public class Book {
         private int printedCopies;
 
         public Builder(String title, Author author) {
+            if(title == null || author == null) throw new IllegalStateException("Title and author shall not be null.");
             this.title = title;
             this.author = author;
         }
