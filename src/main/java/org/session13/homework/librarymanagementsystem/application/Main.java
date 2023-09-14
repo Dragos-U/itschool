@@ -3,8 +3,8 @@ package org.session13.homework.librarymanagementsystem.application;
 import org.session13.homework.librarymanagementsystem.srcdomain.Book;
 import org.session13.homework.librarymanagementsystem.srcdomain.Author;
 import org.session13.homework.librarymanagementsystem.srcdomain.Member;
-import org.session13.homework.librarymanagementsystem.services.LibraryServices;
-import org.session13.homework.librarymanagementsystem.services.MemberServices;
+import org.session13.homework.librarymanagementsystem.services.LibraryService;
+import org.session13.homework.librarymanagementsystem.services.MemberService;
 
 import java.time.LocalDate;
 import java.time.Month;
@@ -42,7 +42,7 @@ public class Main {
         charlesDickens.addBook(book1cd);
 
         Library countyLib = Library.createInstance("County Library");
-        LibraryServices libraryServices = new LibraryServices(countyLib);
+        LibraryService libraryServices = new LibraryService(countyLib);
         countyLib.addBooksToLibrary(book1jv, 20);
         countyLib.addBooksToLibrary(book2jv, 10);
         countyLib.addBooksToLibrary(book1cd, 5);
@@ -59,7 +59,7 @@ public class Main {
                 .address("Iasi")
                 .build();
 
-        MemberServices memberServices = new MemberServices(countyLib);
+        MemberService memberServices = new MemberService(countyLib);
 
         countyLib.addMember(member1);
         countyLib.addMember(member2);

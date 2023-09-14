@@ -7,11 +7,11 @@ import org.session13.homework.librarymanagementsystem.srcdomain.Member;
 import java.time.LocalDate;
 import java.util.Map;
 
-public class MemberServices {
+public class MemberService {
 
     private final Library library;
 
-    public MemberServices(Library library) {
+    public MemberService(Library library) {
         this.library = library;
     }
 

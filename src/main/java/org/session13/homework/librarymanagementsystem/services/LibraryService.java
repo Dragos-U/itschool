@@ -6,11 +6,11 @@ import org.session13.homework.librarymanagementsystem.srcdomain.Member;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LibraryServices {
+public class LibraryService {
 
     private final Library library;
 
-    public LibraryServices(Library library) {
+    public LibraryService(Library library) {
         this.library = library;
     }
 
