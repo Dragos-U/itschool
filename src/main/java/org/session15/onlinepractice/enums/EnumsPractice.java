@@ -13,8 +13,8 @@ public class EnumsPractice {
         }
     }
 
-    private static void message (Day day){
-        switch (day){
+    private static void message(Day day) {
+        switch (day) {
             case MONDAY -> System.out.println("Start of the week ");
             case TUESDAY -> System.out.println("Go to work");
             default -> System.out.println("Just another day");
